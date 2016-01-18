@@ -8,5 +8,10 @@ Once the repos were connected, I pushed all my local content to a new branch (ja
 
 The next thing I did was write this first chunk of the README. Now I'm going to push this again.
 
---------------------------
---------------------------
+-----
+-----
+
+Just wrote basic preliminary code in index.html.
+
+-----
+-----
