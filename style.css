@@ -10,17 +10,35 @@ p {
   text-align: center;
 }
 
-header img {
-
+header {
+  display: flex;
+  justify-content: center;
 }
+
+#firstImage {
+  border-style: outset;
+  border-color: #D8D8D8;
+}
+
+#secondImage {
+  border-style: outset;
+  border-color: #D8D8D8;
+}
+
+#thirdImage {
+  border-style: outset;
+  border-color: #D8D8D8;
+}
+
 
 .flex-container {
   padding: 20px 5px 20px 5px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-direction: row;
 }
 
 .flex-item {
-
+  margin: 5px 5px 5px 5px;
+  display: flex;
 }
