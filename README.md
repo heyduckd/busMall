@@ -15,3 +15,7 @@ Just wrote basic preliminary code in index.html.
 
 -----
 -----
+
+END OF JAN 18:
+
+Got images to populate the index.html page and eliminated possibility for duplicate images. Also noticed that my original image size was pretty big so I cut the dimensions in half to make them more manageable. Going to do some styling before I quit for the night.
