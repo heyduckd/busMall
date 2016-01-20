@@ -19,18 +19,30 @@ header {
   border-style: outset;
   border-color: #D8D8D8;
   border-width: medium;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+	   -moz-box-shadow: 0 10px 6px -6px #777;
+	        box-shadow: 0 10px 6px -6px #777;
+  cursor: pointer;
 }
 
 #secondImage {
   border-style: outset;
   border-color: #D8D8D8;
   border-width: medium;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+	   -moz-box-shadow: 0 10px 6px -6px #777;
+	        box-shadow: 0 10px 6px -6px #777;
+  cursor: pointer;
 }
 
 #thirdImage {
   border-style: outset;
   border-color: #D8D8D8;
   border-width: medium;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+	   -moz-box-shadow: 0 10px 6px -6px #777;
+	        box-shadow: 0 10px 6px -6px #777;
+  cursor: pointer;
 }
 
 .flex-container {
@@ -48,6 +60,7 @@ header {
 #myButton {
   display: flex;
   justify-content: center;
+  padding: 20px 0px 0px 0px
 }
 
 #resultButton {
@@ -60,9 +73,21 @@ header {
 #chartSection1 {
   display: flex;
   justify-content: center;
-  padding: 20px 5px 20px 5px;
+  padding: 0px 0px 0px 0px
+
 }
 
 canvas {
   display: flex;
+}
+
+#tableTitleSection {
+  display: flex;
+  justify-content: center;
+}
+
+#tableTitle {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 15px;
+  padding: 25px 5px 20px 5px;
 }
