@@ -32,7 +32,6 @@ var img1 = document.getElementById('firstImage');
 var img2 = document.getElementById('secondImage');
 var img3 = document.getElementById('thirdImage');
 var result1 = document.getElementById('hidden');
-var title1 = document.getElementById('hideTitle');
 var rand1;
 var rand2;
 var rand3;
@@ -83,9 +82,11 @@ var hidden;
       resultButton.style.display = 'block'
     }
   }
-tableTitle.addEventListener('click', firstChart);
-
 function firstChart() {
+  document.getElementById('chartHeader').innerHTML = '';
+  var chartHead = document.createElement('h1');
+    chartHead.textContent = "Times Displayed (Blue) VS Times Clicked (Red)";
+    chartHeader.appendChild(chartHead);
 var allClicks = [];
 var allViewings = [];
   for (var i = 0; i < products.length; i++) {
@@ -98,9 +99,9 @@ var data = {
     {
     label: "Times Clicked",
     fillColor: "rgb(255,0,0)",
-    strokeColor: "rgb(260,0,0)",
-    highlightFill: "rgb(255,0,0)",
-    highlightStroke: "rgb(260,0,0)",
+    strokeColor: "rgb(290,0,0)",
+    highlightFill: "rgb(295,0,0)",
+    highlightStroke: "rgb(290,0,0)",
     data: allClicks
     },
     {
