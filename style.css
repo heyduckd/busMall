@@ -30,7 +30,6 @@ header {
   border-color: #D8D8D8;
 }
 
-
 .flex-container {
   padding: 20px 5px 20px 5px;
   display: flex;
@@ -41,4 +40,9 @@ header {
 .flex-item {
   margin: 5px 5px 5px 5px;
   display: flex;
+}
+
+#myButton {
+  display: flex;
+  justify-content: center;
 }
