@@ -1,12 +1,21 @@
+'use strict'
+
 function imageInformation(productName, src, productDescription, productPrice) {
-  this.pName = productName;
+  this.productName = productName;
   this.src = 'img/' + src;
   this.pDescription = productDescription;
   this.pPrice = productPrice;
+  this.timesClicked = 0;
+  this.timesDisplayed = 0;
+  this.percentClicked = 0;
 }
+
+var totalClicks = 0;
+
 function randomizer() {
-  return +(Math.floor(Math.random() * 14));
-};
+  return Math.floor((Math.random() * products.length));
+}
+
 var r2d2 = new imageInformation('R2D2 Carry-On', 'bag.jpg', 'Take your own personal R2D2 around with you on your travels. This roller bag s TSA approved for carry-on size.', '$49.99');
 var slicer = new imageInformation('Perfect Slice: Banana', 'banana.jpg', 'This contraption cuts your bananas in one easy motion. Great for feeding children or making fruit salads.', '$9.99');
 var boots = new imageInformation('Boot Boots', 'boots.jpg', 'Looking for the rainboot style but not the feet sweat that comes with it? Try these on for size. They are styled like a rain boot but have ventilation for maximum breathability.', '$59.99');
@@ -21,22 +30,62 @@ var unicorn = new imageInformation('Unicorn Meat', 'unicorn.jpg', 'Now you can f
 var usb = new imageInformation('Gator Tail 128GB USB', 'usb.gif', 'Never run out of thumb drive storage with this massive 128GB USB storage device. When you plug it in, the tail wiggles like it\'s been freshly chopped off!', '$15.99');
 var water = new imageInformation('Infinity Water Pot', 'water-can.jpg', 'This watering pot never runs out of water! Once you put water in, it will water itself for as long as your arm can hold it up! Great photo prop.', '$9.99');
 var wine = new imageInformation('Chug Wine Glass', 'wine-glass.jpg', 'Some people drink wine to be classy, but you drink wine to get drunk! This wine glass is made for you. Never spill when things get intense. Put your entire mouth around the opening and no liquid will be spilt!', '$7,99');
-var products = [r2d2, slicer, boots, chair, figure, dragon, pen, pizza, shark, sweep, unicorn, usb, water, wine];
 
 var img1 = document.getElementById('firstImage');
-var rand1 = randomizer();
-img1.src = products[rand1].src;
-
 var img2 = document.getElementById('secondImage');
-var rand2 = randomizer();
-while (rand1 === rand2) {
-  rand2 = randomizer();
-}
-img2.src = products[rand2].src;
-
 var img3 = document.getElementById('thirdImage');
-var rand3 = randomizer();
-while (rand1 === rand3 || rand2 === rand3) {
+
+var rand1;
+var rand2;
+var rand3;
+
+var products = [r2d2, slicer, boots, chair, figure, dragon, pen, pizza, shark, sweep, unicorn, usb, water, wine];
+
+function populator() {
+  rand1 = randomizer();
+  img1.src = products[rand1].src;
+  products[rand1].timesDisplayed++;
+
+  rand2 = randomizer();
+  while (rand1 === rand2) {
+    rand2 = randomizer();
+  }
+  img2.src = products[rand2].src;
+  products[rand2].timesDisplayed++;
+
   rand3 = randomizer();
+  while (rand1 === rand3 || rand2 === rand3) {
+    rand3 = randomizer();
+  }
+  img3.src = products[rand3].src;
+  products[rand3].timesDisplayed++;
 }
-img3.src = products[rand3].src;
+populator();
+
+function eventChangeImage(image) {
+  image.timesClicked++;
+  totalClicks++;
+  checkButton();
+  populator();
+};
+
+firstImage.addEventListener('click', function() {
+  eventChangeImage(products[rand1]);
+  });
+
+secondImage.addEventListener('click', function() {
+  eventChangeImage(products[rand2]);
+  });
+
+thirdImage.addEventListener('click', function() {
+  eventChangeImage(products[rand3]);
+  });
+
+var hidden;
+  function checkButton() {
+    if (totalClicks < 15) {
+      resultButton.removeAttribute(hidden);
+    } else {
+      resultButton.style.display = 'block'
+    }
+  }
