@@ -36,6 +36,7 @@ var img2 = document.getElementById('secondImage');
 var img3 = document.getElementById('thirdImage');
 
 var result1 = document.getElementById('hidden');
+var title1 = document.getElementById('hideTitle');
 
 var rand1;
 var rand2;
@@ -68,6 +69,7 @@ function eventChangeImage(image) {
   image.timesClicked++;
   totalClicks++;
   checkButton();
+  checkTitle();
   populator();
 };
 
@@ -83,6 +85,8 @@ thirdImage.addEventListener('click', function() {
   eventChangeImage(products[rand3]);
   });
 
+  resultButton.addEventListener('click', firstChart);
+
 var hidden;
   function checkButton() {
     if (totalClicks < 15) {
@@ -92,7 +96,16 @@ var hidden;
     }
   }
 
-resultButton.addEventListener('click', firstChart);
+  tableTitle.addEventListener('click', firstChart);
+
+var hideTitle;
+function checkTitle() {
+  if (totalClicks < 15) {
+    tableTitle.removeAttribute(hideTitle);
+  } else {
+    tableTitle.style.display = 'block'
+  }
+}
 
 function firstChart() {
 var allClicks = [];
@@ -102,23 +115,24 @@ var allViewings = [];
     allViewings[i] = products[i].timesDisplayed;
 }
 
+
 var data = {
   labels: ['r2d2', 'slicer', 'boots', 'chair', 'figure', 'dragon', 'pen', 'pizza', 'shark', 'sweep', 'unicorn', 'usb', 'water', 'wine'],
   datasets: [
     {
     label: "Times Clicked",
-    fillColor: "rgba(220,220,220,0.5)",
-    strokeColor: "rgba(220,220,220,0.8)",
-    highlightFill: "rgba(220,220,220,0.75)",
-    highlightStroke: "rgba(220,220,220,1)",
+    fillColor: "rgb(255,0,0)",
+    strokeColor: "rgb(260,0,0)",
+    highlightFill: "rgb(255,0,0)",
+    highlightStroke: "rgb(260,0,0)",
     data: allClicks
     },
     {
     label: "Times Displayed",
-    fillColor: "rgba(151,187,205,0.5)",
-    strokeColor: "rgba(151,187,205,0.8)",
-    highlightFill: "rgba(151,187,205,0.75)",
-    highlightStroke: "rgba(151,187,205,1)",
+    fillColor: "rgb(0,193,253)",
+    strokeColor: "rgb(0,192,250)",
+    highlightFill: "rgb(0,190,255)",
+    highlightStroke: "rgb(0,191,255)",
     data: allViewings
     }
   ]
