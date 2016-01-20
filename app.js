@@ -35,6 +35,8 @@ var img1 = document.getElementById('firstImage');
 var img2 = document.getElementById('secondImage');
 var img3 = document.getElementById('thirdImage');
 
+var result1 = document.getElementById('hidden');
+
 var rand1;
 var rand2;
 var rand3;
@@ -89,3 +91,39 @@ var hidden;
       resultButton.style.display = 'block'
     }
   }
+
+resultButton.addEventListener('click', firstChart);
+
+function firstChart() {
+var allClicks = [];
+var allViewings = [];
+  for (var i = 0; i < products.length; i++) {
+    allClicks[i] = products[i].timesClicked;
+    allViewings[i] = products[i].timesDisplayed;
+}
+
+var data = {
+  labels: ['r2d2', 'slicer', 'boots', 'chair', 'figure', 'dragon', 'pen', 'pizza', 'shark', 'sweep', 'unicorn', 'usb', 'water', 'wine'],
+  datasets: [
+    {
+    label: "Times Clicked",
+    fillColor: "rgba(220,220,220,0.5)",
+    strokeColor: "rgba(220,220,220,0.8)",
+    highlightFill: "rgba(220,220,220,0.75)",
+    highlightStroke: "rgba(220,220,220,1)",
+    data: allClicks
+    },
+    {
+    label: "Times Displayed",
+    fillColor: "rgba(151,187,205,0.5)",
+    strokeColor: "rgba(151,187,205,0.8)",
+    highlightFill: "rgba(151,187,205,0.75)",
+    highlightStroke: "rgba(151,187,205,1)",
+    data: allViewings
+    }
+  ]
+};
+
+var context = document.getElementById('popularity').getContext('2d');
+var myBarChart = new Chart(context).Bar(data);
+}
