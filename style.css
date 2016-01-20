@@ -22,7 +22,7 @@ header {
   -webkit-box-shadow: 0 10px 6px -6px #777;
 	   -moz-box-shadow: 0 10px 6px -6px #777;
 	        box-shadow: 0 10px 6px -6px #777;
-  cursor: pointer;
+  cursor: url(img/my-cursor.png), pointer;
 }
 
 #secondImage {
@@ -32,7 +32,7 @@ header {
   -webkit-box-shadow: 0 10px 6px -6px #777;
 	   -moz-box-shadow: 0 10px 6px -6px #777;
 	        box-shadow: 0 10px 6px -6px #777;
-  cursor: pointer;
+  cursor: url(img/my-cursor.png), pointer;
 }
 
 #thirdImage {
@@ -42,7 +42,7 @@ header {
   -webkit-box-shadow: 0 10px 6px -6px #777;
 	   -moz-box-shadow: 0 10px 6px -6px #777;
 	        box-shadow: 0 10px 6px -6px #777;
-  cursor: pointer;
+  cursor: url(img/my-cursor.png), pointer;
 }
 
 .flex-container {
