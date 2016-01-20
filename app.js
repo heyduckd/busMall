@@ -82,8 +82,11 @@ var hidden;
       resultButton.style.display = 'block'
     }
   }
-
 function firstChart() {
+  document.getElementById('chartHeader').innerHTML = '';
+  var chartHead = document.createElement('h1');
+    chartHead.textContent = "Times Displayed (Blue) VS Times Clicked (Red)";
+    chartHeader.appendChild(chartHead);
 var allClicks = [];
 var allViewings = [];
   for (var i = 0; i < products.length; i++) {

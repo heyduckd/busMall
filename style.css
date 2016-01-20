@@ -81,13 +81,9 @@ canvas {
   display: flex;
 }
 
-#tableTitleSection {
+h1 {
   display: flex;
   justify-content: center;
-}
-
-#tableTitle {
   font-family: 'Fjalla One', sans-serif;
   font-size: 15px;
-  padding: 25px 5px 20px 5px;
 }
