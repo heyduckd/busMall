@@ -1,5 +1,4 @@
 'use strict'
-
 function imageInformation(productName, src, productDescription, productPrice) {
   this.productName = productName;
   this.src = 'img/' + src;
@@ -9,13 +8,11 @@ function imageInformation(productName, src, productDescription, productPrice) {
   this.timesDisplayed = 0;
   this.percentClicked = 0;
 }
-
 var totalClicks = 0;
 
 function randomizer() {
   return Math.floor((Math.random() * products.length));
 }
-
 var r2d2 = new imageInformation('R2D2 Carry-On', 'bag.jpg', 'Take your own personal R2D2 around with you on your travels. This roller bag s TSA approved for carry-on size.', '$49.99');
 var slicer = new imageInformation('Perfect Slice: Banana', 'banana.jpg', 'This contraption cuts your bananas in one easy motion. Great for feeding children or making fruit salads.', '$9.99');
 var boots = new imageInformation('Boot Boots', 'boots.jpg', 'Looking for the rainboot style but not the feet sweat that comes with it? Try these on for size. They are styled like a rain boot but have ventilation for maximum breathability.', '$59.99');
@@ -34,34 +31,30 @@ var wine = new imageInformation('Chug Wine Glass', 'wine-glass.jpg', 'Some peopl
 var img1 = document.getElementById('firstImage');
 var img2 = document.getElementById('secondImage');
 var img3 = document.getElementById('thirdImage');
-
 var result1 = document.getElementById('hidden');
 var title1 = document.getElementById('hideTitle');
-
 var rand1;
 var rand2;
 var rand3;
 
 var products = [r2d2, slicer, boots, chair, figure, dragon, pen, pizza, shark, sweep, unicorn, usb, water, wine];
-
 function populator() {
   rand1 = randomizer();
-  img1.src = products[rand1].src;
-  products[rand1].timesDisplayed++;
-
+    img1.src = products[rand1].src;
+    products[rand1].timesDisplayed++;
   rand2 = randomizer();
-  while (rand1 === rand2) {
-    rand2 = randomizer();
-  }
-  img2.src = products[rand2].src;
-  products[rand2].timesDisplayed++;
+    while (rand1 === rand2) {
+      rand2 = randomizer();
+    }
+    img2.src = products[rand2].src;
+    products[rand2].timesDisplayed++;
 
   rand3 = randomizer();
-  while (rand1 === rand3 || rand2 === rand3) {
-    rand3 = randomizer();
-  }
-  img3.src = products[rand3].src;
-  products[rand3].timesDisplayed++;
+    while (rand1 === rand3 || rand2 === rand3) {
+      rand3 = randomizer();
+    }
+    img3.src = products[rand3].src;
+    products[rand3].timesDisplayed++;
 }
 populator();
 
@@ -69,23 +62,18 @@ function eventChangeImage(image) {
   image.timesClicked++;
   totalClicks++;
   checkButton();
-  checkTitle();
   populator();
 };
-
 firstImage.addEventListener('click', function() {
   eventChangeImage(products[rand1]);
   });
-
 secondImage.addEventListener('click', function() {
   eventChangeImage(products[rand2]);
   });
-
 thirdImage.addEventListener('click', function() {
   eventChangeImage(products[rand3]);
   });
-
-  resultButton.addEventListener('click', firstChart);
+resultButton.addEventListener('click', firstChart);
 
 var hidden;
   function checkButton() {
@@ -95,17 +83,7 @@ var hidden;
       resultButton.style.display = 'block'
     }
   }
-
-  tableTitle.addEventListener('click', firstChart);
-
-var hideTitle;
-function checkTitle() {
-  if (totalClicks < 15) {
-    tableTitle.removeAttribute(hideTitle);
-  } else {
-    tableTitle.style.display = 'block'
-  }
-}
+tableTitle.addEventListener('click', firstChart);
 
 function firstChart() {
 var allClicks = [];
@@ -114,8 +92,6 @@ var allViewings = [];
     allClicks[i] = products[i].timesClicked;
     allViewings[i] = products[i].timesDisplayed;
 }
-
-
 var data = {
   labels: ['r2d2', 'slicer', 'boots', 'chair', 'figure', 'dragon', 'pen', 'pizza', 'shark', 'sweep', 'unicorn', 'usb', 'water', 'wine'],
   datasets: [
@@ -137,7 +113,6 @@ var data = {
     }
   ]
 };
-
 var context = document.getElementById('popularity').getContext('2d');
 var myBarChart = new Chart(context).Bar(data);
 }
