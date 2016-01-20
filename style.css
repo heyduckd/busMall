@@ -18,16 +18,19 @@ header {
 #firstImage {
   border-style: outset;
   border-color: #D8D8D8;
+  border-width: medium;
 }
 
 #secondImage {
   border-style: outset;
   border-color: #D8D8D8;
+  border-width: medium;
 }
 
 #thirdImage {
   border-style: outset;
   border-color: #D8D8D8;
+  border-width: medium;
 }
 
 .flex-container {
@@ -45,4 +48,21 @@ header {
 #myButton {
   display: flex;
   justify-content: center;
+}
+
+#resultButton {
+  width: 100px;
+  height: 40px;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 15px;
+}
+
+#chartSection1 {
+  display: flex;
+  justify-content: center;
+  padding: 20px 5px 20px 5px;
+}
+
+canvas {
+  display: flex;
 }
