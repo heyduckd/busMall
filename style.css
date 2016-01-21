@@ -57,6 +57,19 @@ header {
   display: flex;
 }
 
+#reload {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0px 0px 0px
+}
+
+#reloadButton {
+  width: 100px;
+  height: 40px;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 15px;
+}
+
 #myButton {
   display: flex;
   justify-content: center;

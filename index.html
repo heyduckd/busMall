@@ -13,6 +13,8 @@
 <header>
   <img id="logo" src="img/busmalllogo.png">
 </header>
+
+<div id="headerwrap">
     <h2>Click on the image that you would prefer to buy!</h2>
     <p>When you get done with 15 votes, you will be able to see the results if you choose.</p>
     <section class="flex-container">
@@ -26,10 +28,15 @@
         <img id="thirdImage">
       </article>
     </section>
+    <form id="reload">
+      <button id="reloadButton" type="button" onClick="window.location.reload()">Restart</button>
+    </form>
 
     <form id="myButton">
       <button hidden id="resultButton" type="button">Get Results</button>
     </form>
+  </div>
+
 
     <h1 id="chartHeader"></h1>
     <section id="chartSection1">
