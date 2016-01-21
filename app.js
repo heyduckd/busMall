@@ -58,7 +58,6 @@ function eventChangeImage(image) {
   totalClicks++;
   checkButton();
   populator();
-  console.log(products);
   localStorage.setItem('dataPersist', JSON.stringify(products));
 };
 
