@@ -1,1 +1,102 @@
-/*This is where my CSS will go*/
+h2 {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 25px;
+  text-align: center;
+}
+
+p {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 15px;
+  text-align: center;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+#firstImage {
+  border-style: outset;
+  border-color: #D8D8D8;
+  border-width: medium;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+	   -moz-box-shadow: 0 10px 6px -6px #777;
+	        box-shadow: 0 10px 6px -6px #777;
+  cursor: url(img/my-cursor.png), pointer;
+}
+
+#secondImage {
+  border-style: outset;
+  border-color: #D8D8D8;
+  border-width: medium;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+	   -moz-box-shadow: 0 10px 6px -6px #777;
+	        box-shadow: 0 10px 6px -6px #777;
+  cursor: url(img/my-cursor.png), pointer;
+}
+
+#thirdImage {
+  border-style: outset;
+  border-color: #D8D8D8;
+  border-width: medium;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+	   -moz-box-shadow: 0 10px 6px -6px #777;
+	        box-shadow: 0 10px 6px -6px #777;
+  cursor: url(img/my-cursor.png), pointer;
+}
+
+.flex-container {
+  padding: 20px 5px 20px 5px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.flex-item {
+  margin: 5px 5px 5px 5px;
+  display: flex;
+}
+
+#reload {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0px 0px 0px
+}
+
+#reloadButton {
+  width: 100px;
+  height: 40px;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 15px;
+}
+
+#myButton {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0px 0px 0px
+}
+
+#resultButton {
+  width: 100px;
+  height: 40px;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 15px;
+}
+
+#chartSection1 {
+  display: flex;
+  justify-content: center;
+  padding: 0px 0px 0px 0px
+
+}
+
+canvas {
+  display: flex;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 15px;
+}
